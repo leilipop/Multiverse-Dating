@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiverse Dating 🌌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- En-tête de l'application -->
+    <header>
+        <h1>🌀 Multiverse Dating 💚</h1>
+        <p>Trouvez l'amour à travers les dimensions infinies</p>
+    </header>
+
+    <div class="container">
+        <!-- Formulaire de recherche -->
+        <section class="search-section">
+            <h2>🔍 Recherche de personnages</h2>
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="nameInput">Nom</label>
+                    <input type="text" id="nameInput" placeholder="Rick, Morty...">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="statusSelect">Statut</label>
+                        <select id="statusSelect">
+                            <option value="">Tous</option>
+                            <option value="alive">En vie, pour chauffer la marmitte 🥵 </option>
+                            <option value="dead">Mort, mais toujours capable 😉! </option>
+                            <option value="unknown"> On sais pas, sûrement un vampire  !</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genderSelect">Genre</label>
+                        <select id="genderSelect">
+                            <option value="">Tous</option>
+                            <option value="female">Femme</option>
+                            <option value="male">Homme</option>
+                            <option value="genderless">Non-genré </option>
+                            <option value="unknown">On sais pas, sûrement un ordinateur ? </option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-search">🚀 Rechercher</button>
+            </form>
+
+            <!-- Compteurs -->
+            <div class="stats">
+                <div class="stat">
+                    <span id="likeCounter">0</span>
+                    <p>💚 Likes</p>
+                </div>
+                <div class="stat">
+                    <span id="passCounter">0</span>
+                    <p>❌ Pass</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zone principale -->
+        <div class="main-area">
+            <!-- Zone du deck (cartes) -->
+            <section class="deck-section">
+                <div id="deckContainer">
+                    <div class="welcome">
+                        <h3>👋 Bienvenue !</h3>
+                        <p>Utilisez le formulaire pour commencer votre recherche.</p>
+                    </div>
+                </div>
+
+                <!-- Boutons like/pass -->
+                <div id="actionButtons" style="display: none;">
+                    <button id="passBtn" class="btn-pass">❌ Passer</button>
+                    <button id="likeBtn" class="btn-like">💚 Liker</button>
+                </div>
+
+                <!-- Bouton charger plus -->
+                <button id="loadMoreBtn" class="btn-more" style="display: none;">
+                    🔄 Charger plus
+                </button>
+            </section>
+
+            <!-- Colonne des matchs -->
+            <aside class="matches-sidebar">
+                <h2>💚 Mes Matchs <span id="matchCount">0</span></h2>
+                <div id="matchesList">
+                    <p class="no-matches">Aucun match pour le moment</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Modal pour les détails -->
+    <dialog id="characterModal">
+        <button id="closeModal" class="close-btn">✕</button>
+        <img id="modalImage" src="" alt="">
+        <h2 id="modalName"></h2>
+        <div class="modal-info">
+            <p><strong>Statut:</strong> <span id="modalStatus"></span></p>
+            <p><strong>Espèce:</strong> <span id="modalSpecies"></span></p>
+            <p><strong>Genre:</strong> <span id="modalGender"></span></p>
+            <p><strong>Origine:</strong> <span id="modalOrigin"></span></p>
+            <p><strong>Localisation:</strong> <span id="modalLocation"></span></p>
+            <p><strong>Épisodes:</strong> <span id="modalEpisodes"></span></p>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

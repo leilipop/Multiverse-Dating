@@ -1,0 +1,483 @@
+/* ========================================
+   MULTIVERSE DATING - CSS
+   Style pour l'application de rencontre
+   ======================================== */
+
+/* --- RESET ET BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* --- EN-TÊTE / HEADER --- */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* --- CONTENEUR PRINCIPAL / MAIN CONTAINER --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* --- SECTION RECHERCHE / SEARCH SECTION --- */
+.search-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.search-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Boutons / Buttons */
+.btn-search {
+    padding: 1rem;
+    background: #00d4ff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-search:hover {
+    background: #00b8e6;
+    transform: translateY(-2px);
+}
+
+/* Statistiques / Stats */
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.stat span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+/* --- ZONE PRINCIPALE / MAIN AREA --- */
+.main-area {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* --- SECTION DU DECK --- */
+.deck-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+#deckContainer {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Message de bienvenue / Welcome message */
+.welcome {
+    text-align: center;
+}
+
+.welcome h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Carte de personnage / Character card */
+.character-card {
+    background: white;
+    color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+/* Animation de sortie / Exit animations */
+.character-card.swipe-left {
+    animation: slideLeft 0.5s forwards;
+}
+
+.character-card.swipe-right {
+    animation: slideRight 0.5s forwards;
+}
+
+@keyframes slideLeft {
+    to {
+        transform: translateX(-200%) rotate(-20deg);
+        opacity: 0;
+    }
+}
+
+@keyframes slideRight {
+    to {
+        transform: translateX(200%) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+.card-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-name {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Badges de statut / Status badges */
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.badge.alive {
+    background: #4caf50;
+    color: white;
+}
+
+.badge.dead {
+    background: #f44336;
+    color: white;
+}
+
+.badge.unknown {
+    background: #ff9800;
+    color: white;
+}
+
+.card-info {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Boutons d'action / Action buttons */
+#actionButtons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.btn-pass,
+.btn-like {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-pass {
+    background: #ff4757;
+    color: white;
+}
+
+.btn-pass:hover {
+    background: #e84118;
+    transform: scale(1.1);
+}
+
+.btn-like {
+    background: #26de81;
+    color: white;
+}
+
+.btn-like:hover {
+    background: #20bf6b;
+    transform: scale(1.1);
+}
+
+/* Bouton charger plus / Load more button */
+.btn-more {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-more:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* --- SIDEBAR DES MATCHS / MATCHES SIDEBAR --- */
+.matches-sidebar {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    height: fit-content;
+}
+
+.matches-sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+#matchCount {
+    background: #00d4ff;
+    color: #000;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+#matchesList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.no-matches {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    opacity: 0.7;
+}
+
+/* Élément de match / Match item */
+.match-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.match-item:hover {
+    transform: translateY(-5px);
+}
+
+.match-avatar {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.match-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.match-remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: none;
+}
+
+.match-item:hover .match-remove {
+    display: block;
+}
+
+/* --- MODAL / POPUP --- */
+dialog {
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    background: white;
+    color: #333;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+#modalImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+dialog h2 {
+    padding: 1rem;
+    margin: 0;
+}
+
+.modal-info {
+    padding: 0 1rem 1.5rem;
+    line-height: 2;
+}
+
+.modal-info strong {
+    color: #667eea;
+}
+
+/* --- RESPONSIVE / ADAPTATIF --- */
+@media (max-width: 768px) {
+    .main-area {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    #matchesList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .search-section,
+    .deck-section,
+    .matches-sidebar {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    #actionButtons {
+        gap: 1rem;
+    }
+    
+    .btn-pass,
+    .btn-like {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
